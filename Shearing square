@@ -1,0 +1,28 @@
+#include<iostream.h>
+#include<graphics.h>
+#include<conio.h>
+void main()
+{
+    int gd=DETECT,gm;
+    int x,y,x1,y1,x2,y2,x3,y3,s;
+    initgraph(&gd,&gm,"..\\BGI");
+    cout<<"Enter the coordinates of the square : ";
+    cin>>x>>y>>x1>>y1>>x2>>y2>>x3>>y3;
+    cout<<"Enter the shearing factor : ";
+    cin>>s;
+    line(x,y,x1,y1);
+    line(x1,y1,x2,y2);
+    line(x2,y2,x3,y3);
+    line(x3,y3,x,y);
+    setcolor(RED);
+    y=y+x*s;
+    y1=y1+x1*s;
+    y2=y2+x2*s;
+    y3=y3+x3*s;
+    line(x,y,x1,y1);
+    line(x1,y1,x2,y2);
+    line(x2,y2,x3,y3);
+    line(x3,y3,x,y);
+    getch();
+    closegraph();
+}
