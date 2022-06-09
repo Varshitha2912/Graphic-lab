@@ -1,0 +1,35 @@
+
+#include<iostream.h>
+#include<graphics.h>
+#include<conio.h>
+void scale(int x1,int y1,int x2,int y2,int f1,int f2)
+{       x1=x1+f1;
+	x2=x2+f1;
+	y1=y1+f2;
+	y2=y2+f2;
+	cout<<"\nNew cordinates: "<<x1<<" "<<y1<<" "<<x2<<" "<<y2;
+	x1+=20;
+	x2+=20;
+	y1+=20;
+	y2+=20;
+	line(x1,y1,x2,y2);
+}
+void main()
+{	int gd=DETECT,gm;
+	int x1,y1,x2,y2,f1,f2,f3,f4,f5,f6;
+	initgraph(&gd,&gm,"..\\BGI");
+	cout<<"Enter 2 points of line:";
+	cin>>x1>>y1>>x2>>y2;
+	cout<<"Enter scaling value for x and y :";
+	cin>>f1>>f2;
+	cout<<"Enter scaling value for x and y :";
+	cin>>f3>>f4;
+	cout<<"Enter scaling value for x and y :";
+	cin>>f5>>f6;
+	line(x1,y1,x2,y2);
+	scale(x1,y1,x2,y2,f1,f2);
+	scale(x1,y1,x2,y2,f3,f4);
+	scale(x1,y1,x2,y2,f5,f6);
+	getch();
+	clrscr();
+}
